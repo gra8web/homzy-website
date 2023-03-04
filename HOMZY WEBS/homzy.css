@@ -1,0 +1,896 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Ubuntu:wght@400;500;700&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Roboto" , sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.slider{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+#slideImg{
+    width: 100%;
+    height: 100%;
+    animation: zoom 3s linear infinite;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1.3);
+    }
+    15%{
+        transform: scale(1);
+    }
+    85%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.3);
+    }
+}
+
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)); 
+    position: absolute;
+    top: 0;
+    position: relative;
+}
+/*****************  NAVIGATION BAR    *************/
+.logo-head {
+  display: flex;
+  align-items: center;
+   justify-content: space-between;
+    
+}
+
+.logo-head a{
+  display: flex;
+  align-items: center;
+   justify-content: space-between;
+}
+
+.logo img{
+  width: 4rem;
+}
+
+.hamburger{
+    display: none;
+}
+
+header{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5rem 0 5rem;
+}
+
+.nav-bar ul{
+    display: flex;
+}
+
+.nav-bar ul li a{
+   display: block;
+   color: wheat;
+   font-size: 20px;
+   padding: 7px 20px;
+   border-radius: 50px;
+   transition: .5s;
+   margin-left: 10px;
+   letter-spacing: 1px;
+}
+
+.nav-bar ul li a:hover{
+    background: red;
+}
+
+.nav-bar ul li a.active{
+    background: red; 
+}
+
+
+
+.nav-bar ul li a.active:hover{
+  background: red;
+  background: transparent;
+  border: 2px solid wheat;
+
+}
+
+/************** Navbar media  ****************/
+
+@media only screen and (max-width: 1320px){
+    header{
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    header{
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .logo img{
+      width: 4rem;
+    }
+
+    .hamburger .line{
+        width: 30px;
+        height: 3px;
+        background: wheat;
+        margin: 6px 0;
+    }
+
+    .nav-bar{
+        height: 0;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        background: rgb(24, 7, 7);
+        transition: 0.5s;
+        overflow: hidden;
+        z-index: 1000;
+    }
+    .nav-bar.active{
+        height: 450px;
+    }
+    .nav-bar.active ul{
+        opacity: 1;
+    }
+    .nav-bar ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        margin-top:px;
+        opacity: 0;
+    }
+
+    .nav-bar ul li a{
+        margin-bottom: 30px;
+    }
+
+}
+
+ /*************  HOME PAGE CONTENT  *******/
+.content{
+    width: 80%;
+    color: wheat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin-top: 5rem;
+    
+}
+.content h2{
+    font-size: 3rem;
+    letter-spacing: 5px;
+    
+}
+
+.content p{
+  font-size: 25px;
+  letter-spacing: 1.3px;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+.btn-container{
+    text-align: center;
+    margin-top: 60px;
+}
+button{
+  font-size: 20px;
+    padding: 10px 25px;
+    margin-left: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid red;
+    background: red;
+    cursor: pointer;
+    color: wheat;
+    letter-spacing: 1px;
+    
+}
+button:hover{
+    background: transparent;
+    border: 2px solid wheat;
+    color: wheat;
+
+}
+.btn-2{
+    background: transparent;
+    border: 2px solid wheat;
+}
+.btn-2:hover{
+    background: red;
+    border: 2px solid red;
+    color: wheat;
+}
+
+/************ HOME PAGE CONTENT MEDIA  *****     *****/
+@media only screen and (max-width: 1320px){
+  header{
+      padding: 0 50px;
+  }
+ 
+}
+
+@media only screen and (max-width: 1100px){
+  header{
+      padding: 0 30px;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .banner{
+    height: 80vh;
+  }
+  .content{
+    margin-top: 50px;
+  }
+  .content h2{
+    font-size: 1.5rem;
+}
+
+.content p{
+  font-size: 17px;
+  line-height: 1.3;
+}
+  .btn-container{
+    margin-top: 30px;
+  }
+
+  button{
+    padding: 5px 25px;
+    font-size: 15px;
+}
+  .btn-2{
+    margin: 5px;
+  }
+  
+
+}
+
+
+
+/******************ABOUT US PAGE  *****************/
+
+.about{
+    background: wheat;
+    color: #180707;  
+    padding: 5rem; 
+  }
+  .about h1{
+    padding: 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .about-container{
+    display: grid;
+    grid-template-columns: 30rem auto; 
+    gap: 5rem;
+  }
+  
+  .imageimg img{
+    width: 100%;
+    border-radius: 10px;
+  }
+  .read-more-content{
+    display: none;
+  }
+
+  /**** Toggle Read More .Show content **/
+  .read-more-content.show-content{
+    display: block;
+  }
+
+  .read-more{
+    display: block;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    
+  }
+  .read-more:hover{
+    text-decoration: underline;
+  }
+  .info p{
+    font-size: 18px;
+  }
+
+  
+  /**********   TEAM *******/
+  .profile-container h3{
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 8rem;
+    text-transform: uppercase;
+  }
+  
+  .profiles{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .Profile{
+    width: 320px;
+    height: 350px;
+    text-align: center;
+    color: rgb(24, 7, 7);
+    border-radius: 10px;
+    padding: 25px 10px 0 10px;
+    flex-wrap: wrap;
+    border: 2px solid rgb(24, 7, 7);
+  }
+
+  .Profile:hover{
+    background: rgb(24, 7, 7);
+    color: wheat;
+   
+  }
+  
+  .profile-img{
+    height: 220px;
+    width: 260px;
+    border-radius: 20px;
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: 400ms;
+    
+  }
+  
+  .profile-img:hover{
+    filter: grayscale(0);
+  }
+  
+  h5{
+    font-size: 20px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    margin-top: 30px;
+  }
+
+
+  p{
+    letter-spacing: 2px;
+    font-size: 15px;
+    padding: 0;
+    margin-top: 10px;
+  }
+   
+  .about-btn{
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .about-btn button:hover{
+    color: rgb(24, 7, 7);
+    border: 2px solid rgb(24, 7, 7);
+  }
+
+
+  /****************** ABOUT US MEDIA  *******************/
+  @media only screen and (max-width: 900px){
+  
+   .about-container{
+     grid-template-columns: 1fr;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .imageimg{
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    
+  }
+
+
+
+  /************** LANDING PAGE MUSIC GALLERY   *********/
+  .sub-head-gallery{
+    padding: 4rem 0 4rem 0;
+    background: wheat;
+    color: rgb(24, 7, 7);
+    text-align: center;
+  }
+
+  .sub-head-gallery h3{
+     font-size: 1.5rem;
+     text-transform: uppercase;
+  }
+  .subhead-p-text{
+    font-size: 20px;
+    padding: 1rem;
+    line-height: 2.5rem;
+    text-transform: capitalize;
+  }
+
+  .gallery-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 4rem 1rem 4rem;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  
+  .card-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 360px;
+    background-color:rgb(24, 7, 7);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    color:wheat;
+  }
+
+  .card-gallery:hover{
+    transform: scale(1.2);
+    z-index: 2;
+  }
+  .card-image-sub {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    background-position: center;
+    padding: .8rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-radius: 25px;
+  }
+  
+  .card-title-sub {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    margin: 5px;
+    letter-spacing: 2px;
+  }
+  
+  .card-description-sub {
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 15px;
+  }
+  .gallery-btn{
+    text-align: center;
+    padding-bottom: 4rem;
+  }
+  .gallery-btn button:hover{
+    color: rgb(24, 7, 7);
+    border: 2px solid rgb(24, 7, 7);
+    
+  }
+
+  /************************* LANDING PAGE MUSIC GALLERY MEDIA ******************/
+   @media only screen and (max-width: 900px){
+    .subhead-p-text{
+      font-size: 17px;
+      line-height: 1.2;
+      padding: 0 2rem;
+    }
+
+   }
+
+
+   /************ CONTACT US PAGE  *******************************/
+
+   .contact{
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(./images/homzy\ music\ production\ home\ image3.webp);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    padding: 5rem 4rem 6rem 4rem;
+    color: wheat;
+    
+  }
+  .contact h1{
+    font-size: 2rem;
+    color: wheat;
+    letter-spacing: 2px;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .contact-p{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 2rem;
+  }
+  .contact .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-col{
+    flex-basis: 48%;
+  }
+
+   .contact-col div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+   }
+
+   
+.contact-col .fa ,
+.contact-col .fas{
+  margin-right: 1.5rem;
+  border-radius: 10px;
+  color: rgb(24, 7, 7);
+  padding: 10px;
+  background: wheat;
+  font-size: 1.5rem;
+}
+
+
+.contact-col .fa:hover,
+.contact-col .fas:hover{
+  border: 2px solid wheat;
+  border-radius: 50%;
+  color: wheat;
+  background: transparent;
+}
+
+span h4{
+  font-size: 17px;
+  padding: 0;
+  letter-spacing: 1px;
+}
+span p{
+ font-size: 15px;
+ padding: 0;
+}
+
+
+
+.contact-col input, .contact-col textarea{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  outline: none;
+  border: 2px solid  wheat;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.contact-col input:focus, .contact-col textarea:focus{
+  background: wheat;
+  color: rgb(24, 7, 7);
+}
+.contact-col .input-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.contact-col .input-row input{
+ flex-basis: 49%;
+}
+
+::placeholder{
+  color: wheat;
+  font-size: 12px;
+}
+   
+ /*************************  CONTACT US PAGE MEDIA  ******************/
+ 
+
+ @media only screen and (max-width: 900px){
+  .contact{
+    align-items: center;
+    padding-top: 5rem;
+    
+  }
+  .contact h1{
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+  
+  .contact-us{
+    width: 80%;
+    margin: auto;
+}
+  
+  .row{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+ .contact-col .input-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+}
+
+  span h4{
+  font-size: 16px;
+  padding: 0;
+ }
+  
+ .contact-col .fa,
+.contact-col .fas{
+  margin-right: 15px;
+  padding: 10px;
+  font-size: 15px;
+
+}
+span p{
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+ }
+ .contact-p{
+  font-size: 17px;
+  line-height: 1.2;
+}
+ .form-btn{
+  padding: 5px 25px;
+  text-align: center;
+  border-radius:50px ;
+  font-weight: 100;
+  color: wheat;
+  background-color: #ec3237;
+  font-size: 10px;
+  margin-top: 10px;
+  margin: 0;
+}
+.contact-col .style{
+  margin: 0;
+  padding: 0;
+}
+
+ }
+
+/*********************** FOOTER PAGE   ************************************/
+
+.footer .footer-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(20rem,1fr)); 
+  gap: 2rem;
+  background: rgb(24, 7, 7);
+  padding: 4rem 0 2rem 0 ;
+  text-align: center;
+  letter-spacing: 2px;
+  color: wheat;
+}
+
+.footer .footer-container .box h3{
+  padding: .5rem 0;
+  font-size: 1.2rem;
+}
+
+.footer .footer-container .box a{
+  display: block;
+  padding: .5rem 0;
+  font-size: .8rem;
+  color: wheat;
+ 
+}
+
+.footer .footer-container .box a:hover{
+  color: red;
+  text-decoration: underline;
+}
+
+.credit{
+  padding: 2rem;
+  font-size: 16px;
+  background: wheat;
+  text-align: center;
+  color: rgb(24, 7, 7);
+}
+
+.logo-footer img{
+  width: 3rem;
+}
+.credit span{
+  color: #ec3237;
+  
+}
+
+
+
+/******************  ANOTHER PAGE MUSIC GALLERY ***********************/
+
+.sub-header{
+  height: 60vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.6), rgba(4,9,30,0.6)),url(./images/homzy\ music\ production\ home\ image6.jpg);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: wheat;
+}
+
+.sub-header h1{
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  padding: 0;
+}
+
+.sub-header p{
+  font-size:1.2rem ;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.music-gallery{
+  background-color: wheat;
+  padding: 4rem 0;
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 350px;
+  height: 420px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:rgb(24, 7, 7);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color:wheat;
+    
+}
+
+.card:hover{
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+.card-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-radius: 25px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+}
+
+.card-description {
+  font-size: 13px;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 10px 10px 10px ;
+  padding: 0 20px;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-top:30px;
+  padding: 0;
+}
+
+.card {
+  display: none; /* hide all cards by default */
+}
+
+.card.active {
+  display: block; /* show only active cards */
+}
+
+#pagination span{
+  color: rgb(24, 7, 7);
+  padding: .5rem;
+}
+
+.pagination-btn{
+  color: wheat;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-size: 13px;
+  padding: 5px 15px;
+}
+
+.pagination-btn:hover{
+  border: 2px solid rgb(24, 7, 7);
+  color: rgb(24, 7, 7);
+}
+
+
+/******** MUSIC GALLERY MEDIA QUERY  ***********/
+
+
+@media only screen and (max-width: 900px){
+
+  .card:hover{
+   transform: none;
+   border: 2px solid rgb(24, 7, 7);
+   background: wheat;
+   color: rgb(24, 7, 7);
+   font-weight: 500;
+  }  
+
+  .sub-header h1{
+    font-size: 2rem;
+    margin-top: .8rem;
+  }
+  .sub-header p{
+    margin-bottom: 0;
+    line-height: 1.2;
+    padding: 0 10px;
+    font-size: 18px;
+  }
+ 
+}
